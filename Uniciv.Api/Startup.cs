@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Uniciv.Api.Repositories;
 
 namespace Uniciv.Api
 {
@@ -16,6 +17,8 @@ namespace Uniciv.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            services.AddSingleton<IFundoCapitalRepository, FundoCapitalRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
